@@ -1,0 +1,27 @@
+version: "3.9"
+services:
+  app:
+    container_name: superchampion-app
+    build: .
+    ports:
+      - "5000:5000"
+    environment:
+      - PORT=5000
+    depends_on:
+      - db
+
+  db:
+    container_name: superchampion-db
+    image: mysql:latest # Use latest version of MySQL image
+    environment:
+      MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
+      MYSQL_DATABASE: ${DB_NAME}
+      MYSQL_USER: ${DB_USER}
+      MYSQL_PASSWORD: ${DB_PASSWORD}
+    ports:
+      - "3306:3306" # Default MySQL port
+    volumes:
+      - mysql-database:/var/lib/mysql # Named volume for persistence
+
+volumes:
+  mysql-database: # Named volume declaration

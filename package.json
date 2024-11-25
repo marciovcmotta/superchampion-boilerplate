@@ -1,0 +1,33 @@
+{
+  "name": "superchampion-boilerplate",
+  "version": "1.0.0",
+  "description": "A simple backend project using nodeJS, express, typescript, mysql, typeorm, migrations, docker, etc.",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "dist": "tsup src",
+    "start:dev": "tsx src/server.ts",
+    "start:watch": "tsx watch src/server.ts",
+    "start:dist": "npm run dist && node dist/src/app.js"
+  },
+  "keywords": ["Backend", "NodeJS", "Express", "Typescript", "TypeORM", "Migrations", "Docker", "MySQL", "Cors"],
+  "author": "",
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "@types/cors": "^2.8.17",
+    "@types/express": "^5.0.0",
+    "tsup": "^8.3.5",
+    "tsx": "^4.19.2",
+    "typescript": "^5.6.3"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.1",
+    "mysql2": "^3.11.4",
+    "reflect-metadata": "^0.2.2",
+    "typeorm": "^0.3.20"
+  }
+}
